@@ -1,11 +1,10 @@
 import { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route, Link } from 'react-router-dom'; // Removed BrowserRouter import here
 import { HashLink } from 'react-router-hash-link';  // separate name to avoid conflict
 import About from './About';
 import Services from './Services';
 import './App.css';
 import Home from './Home';
-
 
 function App() {
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);
@@ -99,7 +98,6 @@ function App() {
   return (
   //Section A (header) 
     <div className="App">
-      <Router>
       <header className="header">
         <div className="card">
           <div className="name">Obinna Iwuno</div>
@@ -132,7 +130,6 @@ function App() {
         <Route path="/about" element={<About  />} />
         <Route path="/services" element={<Services />} /> 
       </Routes>
-    </Router>
   </div>
   
   );
